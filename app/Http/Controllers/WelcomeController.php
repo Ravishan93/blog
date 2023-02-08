@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
     public function index(){
         
-        $posts = Post::all();
+         $books = Book::all();
 
-        return view('welcome', compact('posts'));
+         return view('welcome', compact('books'));
+        return view('welcome');
     }
 }

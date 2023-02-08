@@ -15,23 +15,23 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Action</th>
                       </tr>
                 </thead>
                 <tbody>
-                    @foreach ($posts as $post)
+                    @foreach ($books as $book)
 
                     <tr>
-                        <th scope="row">{{ $post->id }}</th>
-                        <td> {{ $post->title }}</td>
+                        <th scope="row">{{ $book->id }}</th>
+                        <td> {{ $book->book_name }}</td>
                         <td><span class="d-inline-block text-truncate" style="max-width: 300px;">
-                            {{ $post->description }}...
+                            {{ $book->price }}
                           </span> </td>
                         <td>
-                            <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-primary">Update</a>
-                            <a href="{{ route('posts.delete', $post->id) }}" class="btn btn-sm btn-primary">Delete</a>
+                            <a href="{{ route('books.edit', $book->id) }}" class="btn btn-sm btn-primary">Update</a>
+                            <a href="{{ route('books.delete', $book->id) }}" class="btn btn-sm btn-primary">Delete</a>
 
                         </td>
                       </tr>

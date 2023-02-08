@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Post;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,10 +28,13 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
+    public function allBooks(){
 
-    public function allPosts(){
+        $books = Book::where('id', Auth::user()->id)->get();
+        return view('books.all-post', compact('books'));
 
-        $posts = Post::where('user_id', Auth::user()->id)->get();
-        return view('posts.all-post', compact('posts'));
+        
+        
     }
 }

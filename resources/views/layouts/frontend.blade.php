@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Blog</title>
+    <title>Library Management System</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
 
@@ -86,7 +86,7 @@
         
       </div>
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Blog</a>
+        <a class="blog-header-logo text-dark" href="#">Library Management System</a>
       </div>
       <div class=" ">
         </a>
@@ -102,7 +102,7 @@
 
 
         <footer class="blog-footer">
-            <p>Blog<a href="https://getbootstrap.com/"></a></p>
+            <p>Library Management System<a href="https://getbootstrap.com/"></a></p>
             <p>
                 <a href="#">Back to top</a>
           

@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('New Book') }}</div>
+                <div class="card-header">{{ __('Updating Book') }}:{{ $book->book_name}} </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,16 +15,16 @@
                         </div>
                     @endif
 
-                    <form method="get" action="{{ route('books.store') }}">
+                    <form method="post" action="{{ route('books.update', $book->id) }}">
                         @csrf
                         <div class="form-group">
                             <label>Book Name</label>
-                            <input type="text"  name="book_name" class="form-control" placeholder="Enter Name here..." required>
+                            <input type="text"  name="book_name" class="form-control" placeholder="{{( $book->book_name) }}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Book Price</label>
-                            <input type="text"  name="price" class="form-control" placeholder="Enter Price here..." required>
+                            <input type="text"  name="price" class="form-control" placeholder="{{( $book->price) }}" required>
                         </div>
 
                         
@@ -36,14 +37,14 @@
                                     </select>
                                 </div>
                         </div>
-                        
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary">Add</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
-                    </form>
+                      </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

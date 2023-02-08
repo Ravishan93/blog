@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +21,17 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Posts
-Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
-Route::get('/posts/{postId}/show', [PostController::class, 'show'])->name('posts.show');
-Route::get('/posts/all', [HomeController::class, 'allPosts'])->name('posts.all');
-Route::get('/posts/{postId}/edit', [PostController::class, 'edit'])->name('posts.edit');
-Route::post('/posts/{postId}/update', [PostController::class, 'update'])->name('posts.update');
-Route::get('/posts/{postId}/delete', [PostController::class, 'delete'])->name('posts.delete');
+
+
+ Route::get('/books/store', [BookController::class, 'store'])->name('books.store');
+ Route::get('/books/{bookId}/show', [BookController::class, 'show'])->name('books.show');
+ Route::get('/books/all', [HomeController::class, 'allbooks'])->name('books.all');
+ Route::get('/req/all', [HomeController::class, 'allReq'])->name('books.req');
+ Route::get('/books/{bookId}/edit', [BookController::class, 'edit'])->name('books.edit');
+ Route::post('/books/{bookId}/update', [BookController::class, 'update'])->name('books.update');
+ Route::get('/books/{bookId}/delete', [BookController::class, 'delete'])->name('books.delete');
+//  Route::get('/layouts/{bookId}/borrow', [BookController::class, 'store'])->name('books.delete');
+
+ Route::get('/layouts/{bookId}/borrow', function () {
+    return view('Request Sent!');
+});
